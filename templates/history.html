@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Prediction History</h2>
+
+<table class="table table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Symptoms</th>
+            <th>Disease</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in records %}
+        <tr>
+            <td>{{ row["name"] }}</td>
+            <td>{{ row["age"] }}</td>
+            <td>{{ row["gender"] }}</td>
+            <td>{{ row["symptoms"] }}</td>
+            <td>{{ row["predicted_disease"] }}</td>
+            <td>{{ row["date"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="/" class="btn btn-primary">Back</a>
+
+{% endblock %}

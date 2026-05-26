@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Prediction Result</h2>
+
+<div class="card p-4 mt-3">
+
+    <h4>Name: {{ name }}</h4>
+
+    <h5 class="mt-3">Selected Symptoms:</h5>
+    <ul>
+        {% for s in symptoms %}
+        <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3 class="text-success mt-3">
+        Predicted Disease: {{ disease }}
+    </h3>
+
+    <div class="alert alert-warning mt-4">
+        ⚠ This is not a medical diagnosis. Please consult a doctor.
+    </div>
+
+    <a href="/" class="btn btn-primary mt-3">Check Again</a>
+
+</div>
+
+{% endblock %}
